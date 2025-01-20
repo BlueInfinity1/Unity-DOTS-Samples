@@ -157,7 +157,7 @@ public partial struct BuildingGeneratorSystem : ISystem
                             // Skip the interior (only generate blocks along the borders)
                             if ((x != 0 && x != width - 1) && (z != 0 && z != depth - 1)) continue;
 
-                            // Skip creating blocks for door spaces on x = -1, 0, 1, but only for the first few layers
+                            // Skip creating blocks for door spaces on x = originX - 1, originX, originX + 1, but only for the first few layers
                             if (math.abs(x - originX) <= 1 && layerIndex < 5) continue;
 
                             // Instantiate a block entity
