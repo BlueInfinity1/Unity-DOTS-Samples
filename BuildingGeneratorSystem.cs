@@ -79,9 +79,9 @@ public partial struct BuildingGeneratorSystem : ISystem
             int numLayers = random.NextInt(5, 11);
             float layerHeight = 1f; // Height of each layer
 
-            // Generate a random width and depth for the layer (odd numbers >= 3 and <= 21)
-            int width = random.NextInt(3, 21) | 1; // Ensure width is an odd number by utilizing bitwise or with 1, which always sets the least significant bit to 1
-            int depth = random.NextInt(3, 21) | 1; // Ensure depth is an odd number
+            // Generate a random width and depth for the layer (odd numbers >= 5 and <= 21)
+            int width = random.NextInt(5, 21) | 1; // Ensure width is an odd number by utilizing bitwise or with 1, which always sets the least significant bit to 1
+            int depth = random.NextInt(5, 21) | 1; // Ensure depth is an odd number
             
             float3 blockDefaultAcceleration = new(0, -20, 0);
             
