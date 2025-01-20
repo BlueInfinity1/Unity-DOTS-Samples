@@ -47,11 +47,17 @@ This system is a Unity **Entity Component System (ECS)** implementation designed
 2. **Block-Bouncing Logic**:
    - Add block interaction logic to handle bounces when blocks overlap.
    - Simulate perfectly elastic collisions for more dynamic block behavior.
+     
+3. **Combined Building Collider**:
+   - Plan to generate a single, combined collider for each building.
+   - This will allow individual building blocks to work without colliders, reducing physics overhead.
+   - The combined collider will be dynamically updated based on the dimensions and layout of the building.
+   - Enables efficient collision handling while maintaining performance for large-scale buildings.
 
-3. **LOD Optimization**:
+4. **LOD Optimization**:
    - Add level-of-detail (LOD) management for rendering distant blocks.
 
-4. **Physics Integration**:
+5. **Physics Integration**:
    - Optionally integrate Unity Physics for more complex block interactions.
 
 ---
