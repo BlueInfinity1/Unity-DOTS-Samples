@@ -13,7 +13,7 @@ This system is a Unity **Entity Component System (ECS)** implementation designed
 
 2. **Falling Block Simulation**:
    - Simulates block motion with physics-like velocity and acceleration.
-   - Blocks fall to their target positions and snap upon reaching the ground.
+   - Blocks fall to their target positions and snap upon reaching their target positions.
    - Uses ECS jobs for high-performance parallel processing.
 
 3. **Collision-Like Interaction**:
