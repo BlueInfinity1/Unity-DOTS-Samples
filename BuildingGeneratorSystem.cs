@@ -55,7 +55,7 @@ public partial struct BuildingGeneratorSystem : ISystem
         var entityManager = state.EntityManager;
 
         int blockCount = 0;
-        int numBuildings = 300; //random.NextInt(20,)
+        int numBuildings = 300;
 
         for (int buildingIndex = 0; buildingIndex < numBuildings; buildingIndex++)
         {
