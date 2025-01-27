@@ -2,6 +2,9 @@
 
 This system is a Unity **Entity Component System (ECS)** implementation designed to generate, simulate, and render buildings composed of multiple layers and blocks. It efficiently handles the creation, motion simulation, and future GPU-optimized rendering of up to hundreds of thousands of entities.
 
+[Video of the system behavior](https://drive.google.com/file/d/12Es2kmqOraFzIuTk4j-Zm1ThUteGYjGu/view?usp=drive_link)
+[Bouncier version that works without Unity's physics systems (Details further below)](https://drive.google.com/file/d/12Es2kmqOraFzIuTk4j-Zm1ThUteGYjGu/view?usp=drive_link)
+
 ---
 
 ## Features
@@ -73,4 +76,34 @@ This system is a Unity **Entity Component System (ECS)** implementation designed
 
 3. **Block Simulation**:
    - `BuildingBlockSystem` processes blocks in parallel using ECS jobs, simulating motion.
+
+---
+
+## Bouncier Version (Work in Progress)
+
+A bouncier variant of the block system is under development, designed to operate entirely without Unity's built-in physics system, further reducing overhead.
+
+### How It Works
+
+- **Stack Organization**:  
+  All blocks are organized into stacks, and collisions are calculated based on their relative positions within the same stack.
+
+- **Collision Detection**:  
+  For two blocks, `N` (above) and `N+1` (below), a collision is detected if the difference between their `y` coordinates is less than the `blockHeight`.
+
+- **Collision Resolution**:  
+  When a collision occurs:
+  1. The blocks are separated so their distance equals or exceeds `blockHeight`.
+  2. Velocities are exchanged:
+     - Block `N+1` is propelled downward with Block `N`'s velocity.
+     - Block `N` is propelled upward with Block `N+1`'s velocity.
+
+- **Perfect Elasticity**:  
+  Since all blocks are identical in mass, the collisions are treated as perfectly elastic, preserving total energy and momentum within the system.
+
+---
+
+This design allows for efficient, dynamic interactions while maintaining high performance, even with large-scale simulations.
+
+
 
