@@ -1,6 +1,6 @@
 # ECS Building Generation and Simulation System
 
-This system is a Unity **Entity Component System (ECS)** implementation designed to generate, simulate, and render buildings composed of multiple layers and blocks. It efficiently handles the creation, motion simulation, and future GPU-optimized rendering of up to hundreds of thousands of entities.
+This system is a Unity **Entity Component System (ECS)** implementation designed to generate, simulate, and render buildings composed of multiple layers and blocks. It efficiently handles the creation, motion simulation and rendering of up to hundreds of thousands of entities. The performance gains are achieved by using the **Burst Compiler**, which optimizes mathematical operations and enables high-performance parallel computation. When used with Unity’s Job System, it allows normally single-threaded Unity games to efficiently utilize multiple CPU cores.
 
 [Video of the system behavior](https://drive.google.com/file/d/12Es2kmqOraFzIuTk4j-Zm1ThUteGYjGu/view?usp=drive_link)
 
